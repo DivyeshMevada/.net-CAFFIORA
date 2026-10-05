@@ -1,0 +1,84 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="CAFFIORA.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - CAFFIORA Artisanal Coffee</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- Custom CSS -->
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/responsive.css" rel="stylesheet" />
+    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="mainForm" runat="server">
+        <!-- CAFFIORA MASTER HEADER -->
+        <header class="caffiora-header">
+            <a href="Default.aspx" class="brand-logo">CAFFIORA</a>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="Default.aspx" class="nav-link <%= Request.Url.AbsolutePath.EndsWith("Default.aspx") || Request.Url.AbsolutePath.EndsWith("/") ? "active" : "" %>">HOME</a></li>
+                    <li><a href="About.aspx" class="nav-link <%= Request.Url.AbsolutePath.EndsWith("About.aspx") ? "active" : "" %>">ABOUT</a></li>
+                    <li><a href="Menu.aspx" class="nav-link <%= Request.Url.AbsolutePath.EndsWith("Menu.aspx") || Request.Url.AbsolutePath.EndsWith("ProductDetails.aspx") ? "active" : "" %>">MENU</a></li>
+                    <li><a href="Contact.aspx" class="nav-link <%= Request.Url.AbsolutePath.EndsWith("Contact.aspx") ? "active" : "" %>">CONTACT</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button type="button" class="header-icon-btn" title="Search" onclick="window.location='Menu.aspx';">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="Cart.aspx" class="header-icon-btn" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge-count">2</span>
+                </a>
+                <a href="Login.aspx" class="header-icon-btn" title="Sign In / Profile">
+                    <i class="far fa-user"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- MAIN BODY CONTENT -->
+        <main>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <!-- CAFFIORA MASTER FOOTER -->
+        <footer class="caffiora-footer">
+            <div>
+                <span class="footer-brand">CAFFIORA</span>
+                <span class="footer-tagline">Crafted With Distinction</span>
+            </div>
+            <div>
+                &copy; 2023 CAFFIORA Artisanal Coffee. All rights reserved.
+            </div>
+            <ul class="footer-links">
+                <li><a href="Default.aspx">Privacy Policy</a></li>
+                <li><a href="Default.aspx">Terms of Service</a></li>
+                <li><a href="Contact.aspx">Support</a></li>
+                <li><a href="StaffDashboard.aspx" title="Staff Portal" style="opacity: 0.7;"><i class="fas fa-user-clock"></i> Staff</a></li>
+                <li><a href="AdminDashboard.aspx" title="Admin Portal" style="opacity: 0.7;"><i class="fas fa-shield-alt"></i> Admin</a></li>
+            </ul>
+        </footer>
+    </form>
+
+    <!-- Master Scripts -->
+    <script src="js/site.js"></script>
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* ===================================================================
+   CAFFIORA - Responsive Layout Media Queries
+   =================================================================== */
+
+@media (max-width: 1024px) {
+    .main-wrapper {
+        padding: 24px 20px 48px 20px;
+    }
+
+    .caffiora-header, .caffiora-footer, .dashboard-header {
+        padding: 18px 24px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-card-featured {
+        grid-column: span 3;
+    }
+
+    .home-grid-layout, .about-top-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-lower-layout {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cta-espresso-box {
+        grid-column: span 2;
+    }
+
+    .dashboard-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dash-content-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .caffiora-header {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+        text-align: center;
+        padding: 16px 20px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .auth-split-container {
+        flex-direction: column;
+    }
+
+    .auth-image-side {
+        min-height: 240px;
+        flex: none;
+    }
+
+    .auth-content-side {
+        padding: 30px 16px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-card-featured {
+        grid-column: span 2;
+        grid-template-columns: 1fr;
+    }
+
+    .product-details-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px 18px;
+    }
+
+    .details-image-side {
+        height: 300px;
+    }
+
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-grid-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .two-col-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .caffiora-footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .home-lower-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-espresso-box {
+        grid-column: span 1;
+    }
+
+    .philosophy-pillars-row {
+        grid-template-columns: 1fr;
+    }
+
+    .about-philosophy-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card-featured {
+        grid-column: span 1;
+    }
+
+    .dashboard-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-card {
+        padding: 30px 20px;
+    }
+}
