@@ -1,5 +1,7 @@
 <%@ Page Title="Contact Us" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="CAFFIORA.Contact" %>
 
+
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="main-wrapper">
         <div style="margin-bottom: 30px; text-align: center;">
@@ -10,8 +12,8 @@
             </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 32px;">
-            <!-- Contact Form -->
+<div class="contact-layout">
+    <!-- Contact Form -->
             <div class="checkout-form-box" style="padding: 36px;">
                 <h3 class="box-header-title">Send Us a Message</h3>
 
@@ -19,32 +21,74 @@
                     <i class="fas fa-check-circle"></i> Thank you! Your message has been received. Our team will get back to you shortly.
                 </asp:Panel>
 
+                <!-- Validation Summary -->
+                
+
                 <div class="form-group">
                     <label class="form-label">Your Name</label>
-                    <asp:TextBox ID="txtContactName" runat="server" CssClass="form-control-caffiora" placeholder="Enter your full name" required="required"></asp:TextBox>
+                    <asp:TextBox ID="txtContactName" runat="server" CssClass="form-control-caffiora" placeholder="Enter your full name"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvContactName" runat="server" ControlToValidate="txtContactName"
+                        ValidationGroup="ContactGroup" ErrorMessage="Your name is required." Display="Dynamic"
+                        CssClass="val-msg" SetFocusOnError="true">
+                        <i class="fas fa-exclamation-circle"></i> Your name is required.
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revContactName" runat="server" ControlToValidate="txtContactName"
+                        ValidationGroup="ContactGroup" ValidationExpression="^[a-zA-Z\s\.'-]{2,50}$"
+                        ErrorMessage="Name must contain letters only (2-50 characters)." Display="Dynamic"
+                        CssClass="val-msg" SetFocusOnError="true">
+                        <i class="fas fa-exclamation-circle"></i> Letters and spaces only (2-50 characters).
+                    </asp:RegularExpressionValidator>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">Email Address</label>
-                    <asp:TextBox ID="txtContactEmail" runat="server" CssClass="form-control-caffiora" placeholder="Enter your email address" TextMode="Email" required="required"></asp:TextBox>
+                    <asp:TextBox ID="txtContactEmail" runat="server" CssClass="form-control-caffiora" placeholder="Enter your email address"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvContactEmail" runat="server" ControlToValidate="txtContactEmail"
+                        ValidationGroup="ContactGroup" ErrorMessage="Email address is required." Display="Dynamic"
+                        CssClass="val-msg" SetFocusOnError="true">
+                        <i class="fas fa-exclamation-circle"></i> Email address is required.
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revContactEmail" runat="server" ControlToValidate="txtContactEmail"
+                        ValidationGroup="ContactGroup" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                        ErrorMessage="Please enter a valid email address (e.g. name@example.com)." Display="Dynamic"
+                        CssClass="val-msg" SetFocusOnError="true">
+                        <i class="fas fa-exclamation-circle"></i> Please enter a valid email address.
+                    </asp:RegularExpressionValidator>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">Subject</label>
-                    <asp:TextBox ID="txtContactSubject" runat="server" CssClass="form-control-caffiora" placeholder="Inquiry about..." required="required"></asp:TextBox>
+                    <asp:TextBox ID="txtContactSubject" runat="server" CssClass="form-control-caffiora" placeholder="Inquiry about..."></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvContactSubject" runat="server" ControlToValidate="txtContactSubject"
+                        ValidationGroup="ContactGroup" ErrorMessage="Subject is required." Display="Dynamic"
+                        CssClass="val-msg" SetFocusOnError="true">
+                        <i class="fas fa-exclamation-circle"></i> Subject is required.
+                    </asp:RequiredFieldValidator>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">Message</label>
-                    <asp:TextBox ID="txtContactMessage" runat="server" CssClass="form-control-caffiora" TextMode="MultiLine" Rows="5" placeholder="How can we assist you?" required="required"></asp:TextBox>
+                    <asp:TextBox ID="txtContactMessage" runat="server" CssClass="form-control-caffiora" TextMode="MultiLine" Rows="5" placeholder="How can we assist you?"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfvContactMessage" runat="server" ControlToValidate="txtContactMessage"
+                        ValidationGroup="ContactGroup" ErrorMessage="Message cannot be blank." Display="Dynamic"
+                        CssClass="val-msg" SetFocusOnError="true">
+                        <i class="fas fa-exclamation-circle"></i> Message cannot be blank.
+                    </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="revContactMessage" runat="server" ControlToValidate="txtContactMessage"
+                        ValidationGroup="ContactGroup" ValidationExpression="^[\s\S]{10,2000}$"
+                        ErrorMessage="Message must be at least 10 characters long." Display="Dynamic"
+                        CssClass="val-msg" SetFocusOnError="true">
+                        <i class="fas fa-exclamation-circle"></i> Message must be at least 10 characters long.
+                    </asp:RegularExpressionValidator>
                 </div>
 
-                <asp:Button ID="btnSendContact" runat="server" Text="SEND MESSAGE" CssClass="btn-primary-caffiora" Style="width: 100%; padding: 13px;" OnClick="btnSendContact_Click" />
+                <asp:Button ID="btnSendContact" runat="server" Text="SEND MESSAGE" CssClass="btn-primary-caffiora" 
+                    Style="width: 100%; padding: 13px;" OnClick="btnSendContact_Click" ValidationGroup="ContactGroup" />
             </div>
 
             <!-- Contact Information & Store Location -->
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="checkout-form-box" style="padding: 30px;">
+         <div class="contact-info-layout">
+    <div class="checkout-form-box" style="padding: 30px;">
                     <h3 class="box-header-title"><i class="fas fa-map-marker-alt"></i> Flagship Café</h3>
                     <p style="font-size: 14px; color: var(--text-main); line-height: 1.6; margin-bottom: 16px;">
                         BLOCK A, FLAT NO 804, Oscar Sky Park,<br />

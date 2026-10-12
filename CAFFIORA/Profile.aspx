@@ -11,7 +11,7 @@
             <!-- Left Sidebar Card -->
             <div class="profile-sidebar-card">
                 <div class="profile-avatar-circle">
-                    <i class="far fa-user"></i>
+                    <i class="far fa-user"></i> 
                 </div>
                 <h2 class="profile-name">Divyesh Mevada</h2>
                 <div class="profile-email">mevadadivyesh030@gmail.com</div>
@@ -32,9 +32,9 @@
                 </div>
 
                 <div style="margin-top: 20px; text-align: left;">
-                    <a href="Login.aspx" style="font-size: 13px; font-weight: 600; color: #7E736B; display: inline-flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-sign-out-alt"></i> LOG OUT
-                    </a>
+                         <a href="Login.aspx" class="quick-action-btn" style="color: #9E3A3A;">
+                              <i class="fas fa-sign-out-alt"></i> Logout
+                          </a>
                 </div>
             </div>
 
@@ -56,14 +56,14 @@
                             <span>Saved Addresses</span>
                             <i class="fas fa-chevron-right" style="font-size: 11px;"></i>
                         </a>
-                        <a href="Menu.aspx" class="profile-nav-item">
+                       <%-- <a href="Menu.aspx" class="profile-nav-item">
                             <span>Favorites</span>
                             <i class="fas fa-chevron-right" style="font-size: 11px;"></i>
-                        </a>
-                        <a href="#" class="profile-nav-item" onclick="showToast('No new notifications'); return false;">
+                        </a>--%>
+                     <%--   <a href="#" class="profile-nav-item" onclick="showToast('No new notifications'); return false;">
                             <span>Notifications</span>
                             <i class="fas fa-chevron-right" style="font-size: 11px;"></i>
-                        </a>
+                        </a>--%>
                         <a href="#" class="profile-nav-item" onclick="showToast('Preferences updated'); return false;">
                             <span>Settings</span>
                             <i class="fas fa-chevron-right" style="font-size: 11px;"></i>
@@ -77,14 +77,14 @@
                                 <div class="profile-stat-number">12</div>
                                 <div class="profile-stat-label">ORDERS</div>
                             </div>
-                            <div class="profile-stat-box" style="flex: 1;">
+                            <%--<div class="profile-stat-box" style="flex: 1;">
                                 <div class="profile-stat-number">6</div>
-                                <div class="profile-stat-label">FAVORITES</div>
+                                <div class="profile-stat-label">favorites</div>
                             </div>
-                            <div class="profile-stat-box" style="flex: 1;">
+                          <div class="profile-stat-box" style="flex: 1;">
                                 <div class="profile-stat-number">240</div>
-                                <div class="profile-stat-label">PTS</div>
-                            </div>
+                                <div class="profile-stat-label">pts</div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>

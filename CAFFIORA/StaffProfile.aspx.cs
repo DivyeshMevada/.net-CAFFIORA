@@ -8,5 +8,15 @@ namespace CAFFIORA
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+
+        protected void btnSaveStaff_Click(object sender, EventArgs e)
+        {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
+            pnlStaffSuccess.Visible = true;
+        }
     }
 }

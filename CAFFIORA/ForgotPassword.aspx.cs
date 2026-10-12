@@ -11,6 +11,11 @@ namespace CAFFIORA
 
         protected void btnReset_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             pnlSuccess.Visible = true;
         }
     }

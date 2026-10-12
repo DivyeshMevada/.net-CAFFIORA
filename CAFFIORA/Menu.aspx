@@ -19,6 +19,7 @@
 
         <!-- PRODUCTS GRID -->
         <div class="products-grid">
+
             <!-- Card 1: Velvet Espresso (Featured Card) -->
             <div class="product-card product-card-featured" data-category="ESPRESSO BAR">
                 <div class="product-image-wrap">
@@ -28,7 +29,9 @@
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
                             <h3 class="product-title" style="font-size: 20px; font-family: var(--font-serif);"><a href="ProductDetails.aspx?id=1">Velvet Espresso</a></h3>
-                            <div class="product-rating"><i class="fas fa-star"></i> 4.9</div>
+
+                            <%-- <div class="product-rating"><i class="fas fa-star"></i> 4.9</div> --%>
+
                         </div>
                         <div class="product-sub">Rich &middot; Smooth &middot; Premium</div>
                         <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5; margin-bottom: 20px;">
@@ -55,7 +58,9 @@
                     <div class="product-card-footer">
                         <span class="product-price">&#8377;249</span>
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <span class="product-rating"><i class="fas fa-star"></i> 4.9</span>
+
+                            <%-- <span class="product-rating"><i class="fas fa-star"></i> 4.9</span> --%>
+
                             <button type="button" class="btn-add-circle" data-product-name="Italian Roast" title="Add to Cart">+</button>
                         </div>
                     </div>
@@ -75,7 +80,9 @@
                     <div class="product-card-footer">
                         <span class="product-price">&#8377;319</span>
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <span class="product-rating"><i class="fas fa-star"></i> 4.8</span>
+
+                            <%-- <span class="product-rating"><i class="fas fa-star"></i> 4.8</span> --%>
+
                             <button type="button" class="btn-add-circle" data-product-name="Caramel Macchiato" title="Add to Cart">+</button>
                         </div>
                     </div>
@@ -95,7 +102,9 @@
                     <div class="product-card-footer">
                         <span class="product-price">&#8377;280</span>
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <span class="product-rating"><i class="fas fa-star"></i> 4.9</span>
+
+                            <%-- <span class="product-rating"><i class="fas fa-star"></i> 4.9</span> --%>
+
                             <button type="button" class="btn-add-circle" data-product-name="Vanilla Croissant" title="Add to Cart">+</button>
                         </div>
                     </div>
@@ -115,7 +124,9 @@
                     <div class="product-card-footer">
                         <span class="product-price">&#8377;289</span>
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <span class="product-rating"><i class="fas fa-star"></i> 4.7</span>
+
+                            <%-- <span class="product-rating"><i class="fas fa-star"></i> 4.7</span> --%>
+
                             <button type="button" class="btn-add-circle" data-product-name="Stroopwafel Cupcake" title="Add to Cart">+</button>
                         </div>
                     </div>
@@ -135,7 +146,9 @@
                     <div class="product-card-footer">
                         <span class="product-price">&#8377;219</span>
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <span class="product-rating"><i class="fas fa-star"></i> 4.8</span>
+
+                            <%-- <span class="product-rating"><i class="fas fa-star"></i> 4.8</span> --%>
+
                             <button type="button" class="btn-add-circle" data-product-name="Chocolate Danish" title="Add to Cart">+</button>
                         </div>
                     </div>
@@ -155,12 +168,15 @@
                     <div class="product-card-footer">
                         <span class="product-price">&#8377;289</span>
                         <div style="display: flex; align-items: center; gap: 8px;">
-                            <span class="product-rating"><i class="fas fa-star"></i> 4.8</span>
+
+                            <%-- <span class="product-rating"><i class="fas fa-star"></i> 4.8</span> --%>
+
                             <button type="button" class="btn-add-circle" data-product-name="Caffè Latte" title="Add to Cart">+</button>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </asp:Content>

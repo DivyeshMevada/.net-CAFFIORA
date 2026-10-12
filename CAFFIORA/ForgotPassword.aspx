@@ -31,12 +31,29 @@
                         <i class="fas fa-check-circle"></i> Instructions sent! Please check your inbox.
                     </asp:Panel>
 
+                    <!-- Validation Summary -->
+                    <asp:ValidationSummary ID="valSummaryForgot" runat="server" ValidationGroup="ForgotGroup" 
+                        CssClass="validation-summary-box" HeaderText="Please correct the following errors:" DisplayMode="BulletList" />
+
                     <div class="form-group">
                         <label class="form-label">Email Address</label>
-                        <asp:TextBox ID="txtResetEmail" runat="server" CssClass="form-control-caffiora" placeholder="enter your email address" TextMode="Email" required="required"></asp:TextBox>
+                        <asp:TextBox ID="txtResetEmail" runat="server" CssClass="form-control-caffiora" placeholder="enter your email address"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvResetEmail" runat="server" ControlToValidate="txtResetEmail"
+                            ValidationGroup="ForgotGroup" ErrorMessage="Email address is required." Display="Dynamic"
+                            CssClass="val-msg" SetFocusOnError="true">
+                            <i class="fas fa-exclamation-circle"></i> Email address is required.
+                        </asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revResetEmail" runat="server" ControlToValidate="txtResetEmail"
+                            ValidationGroup="ForgotGroup" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            ErrorMessage="Please enter a valid email address (e.g. name@example.com)." Display="Dynamic"
+                            CssClass="val-msg" SetFocusOnError="true">
+                            <i class="fas fa-exclamation-circle"></i> Please enter a valid email address.
+                        </asp:RegularExpressionValidator>
                     </div>
 
-                    <asp:Button ID="btnReset" runat="server" Text="SEND RESET LINK" CssClass="btn-primary-caffiora" Style="width: 100%; padding: 13px; font-size: 13px; font-weight: 700; letter-spacing: 1px;" OnClick="btnReset_Click" />
+                    <asp:Button ID="btnReset" runat="server" Text="SEND RESET LINK" CssClass="btn-primary-caffiora" 
+                        Style="width: 100%; padding: 13px; font-size: 13px; font-weight: 700; letter-spacing: 1px;" 
+                        OnClick="btnReset_Click" ValidationGroup="ForgotGroup" />
 
                     <div class="auth-footer-text">
                         Remembered your password? <a href="Login.aspx" class="auth-footer-link">Sign In</a>

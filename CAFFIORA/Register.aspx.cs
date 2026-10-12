@@ -1,5 +1,6 @@
 using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace CAFFIORA
 {
@@ -9,8 +10,18 @@ namespace CAFFIORA
         {
         }
 
+        protected void cvAgree_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = chkAgree.Checked;
+        }
+
         protected void btnCreateAccount_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             Response.Redirect("Login.aspx?role=customer");
         }
     }

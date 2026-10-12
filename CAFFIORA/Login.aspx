@@ -44,21 +44,39 @@
                     
                     <asp:HiddenField ID="roleInput" runat="server" Value="customer" />
 
+                    
+
                     <!-- Email Address -->
                     <div class="form-group">
                         <label class="form-label">Email Address</label>
-                        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control-caffiora" placeholder="enter email address" Text="mevadadivyesh030@gmail.com" required="required"></asp:TextBox>
+                        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control-caffiora" placeholder="enter email address"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"
+                            ValidationGroup="LoginGroup" ErrorMessage="Email address is required." Display="Dynamic"
+                            CssClass="val-msg" SetFocusOnError="true">
+                            <i class="fas fa-exclamation-circle"></i> Email address is required.
+                        </asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
+                            ValidationGroup="LoginGroup" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            ErrorMessage="Please enter a valid email address (e.g. name@example.com)." Display="Dynamic"
+                            CssClass="val-msg" SetFocusOnError="true">
+                            <i class="fas fa-exclamation-circle"></i> Please enter a valid email address.
+                        </asp:RegularExpressionValidator>
                     </div>
 
                     <!-- Password with Eye Toggle -->
                     <div class="form-group">
                         <label class="form-label">Password</label>
                         <div class="password-input-wrap">
-                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control-caffiora" TextMode="Password" placeholder="enter password" Text="caffiora2026" required="required"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control-caffiora" TextMode="Password" placeholder="enter password" Text="caffiora2026"></asp:TextBox>
                             <button type="button" class="password-toggle-btn" title="Toggle password">
                                 <i class="far fa-eye"></i>
                             </button>
                         </div>
+                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword"
+                            ValidationGroup="LoginGroup" ErrorMessage="Password is required." Display="Dynamic"
+                            CssClass="val-msg" SetFocusOnError="true">
+                            <i class="fas fa-exclamation-circle"></i> Password is required.
+                        </asp:RequiredFieldValidator>
                     </div>
 
                     <!-- Remember Me & Forgot Password -->
@@ -71,7 +89,9 @@
                     </div>
 
                     <!-- Submit Button -->
-                    <asp:Button ID="btnSignIn" runat="server" Text="SIGN IN" CssClass="btn-primary-caffiora" Style="width: 100%; padding: 13px; font-size: 13px; font-weight: 700; letter-spacing: 1px;" OnClick="btnSignIn_Click" />
+                    <asp:Button ID="btnSignIn" runat="server" Text="SIGN IN" CssClass="btn-primary-caffiora" 
+                        Style="width: 100%; padding: 13px; font-size: 13px; font-weight: 700; letter-spacing: 1px;" 
+                        OnClick="btnSignIn_Click" ValidationGroup="LoginGroup" />
 
                     <!-- Footer Area -->
                     <div class="auth-footer-text" id="loginFooterArea">

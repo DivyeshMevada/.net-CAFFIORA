@@ -48,6 +48,11 @@ namespace CAFFIORA
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             // Demo redirect according to role
             string role = roleInput.Value.ToLower();
             if (role == "staff")

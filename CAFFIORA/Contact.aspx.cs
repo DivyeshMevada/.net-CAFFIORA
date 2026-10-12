@@ -11,6 +11,11 @@ namespace CAFFIORA
 
         protected void btnSendContact_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             pnlContactSuccess.Visible = true;
             txtContactMessage.Text = string.Empty;
             txtContactSubject.Text = string.Empty;

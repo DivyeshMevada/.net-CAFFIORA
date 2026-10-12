@@ -11,6 +11,11 @@ namespace CAFFIORA
 
         protected void btnPlaceOrder_Click(object sender, EventArgs e)
         {
+            if (!Page.IsValid)
+            {
+                return;
+            }
+
             Response.Redirect("OrderConfirmation.aspx");
         }
     }
